@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+ </head>
+ <body >
+   <div style="display: flex; flex-direction: row;">
+  
+    <canvas id="canvas" width="600" height="600"
+     style="border: 2px solid rgb(71, 71, 71); 
+     background-color: rgb(32, 32, 32);">
+  
+     </canvas>
+     <button id=7 onclick="mouseDrag();">Przesuń</button>
+     <div style="flex-direction: column;">
+       <div >
+         <button id=1 onclick="draw('circle');">Narysuj kolo</button>
+         <button id=2 onclick="draw('rect');">Narysuj prostokat</button>
+        </div>
+        <div>
+         <button id=3 onclick="draw('line');">Narysuj linie</button>
+        <button id=4 onclick="clearCanva();">Ukryj</button>
+      </div>
+      <div>
+        <button id=5 onclick="deleteCanva();">Usuń wszystko</button>
+        <button id=6 onclick="drawAllShapes();">Narysuj kształty</button>
+       </div>
+       <form name='createShapeForm'>
+         <div style="display: flex; flex-direction: column;">
+          <span>
+            <input type="radio" id="circle" name="shape" value="circle" checked>
+            Koło
+          </span>
+          <span> 
+          <input type="radio" id="rect" name="shape" value="rect" >
+            Prostokąt
+        </span>
+          <span>
+            <input type="radio" id="line" name="shape" value="line" >
+            Linia
+          </span>  
+         </div>
+        
+         <input type="number" name="x0" id="i1" min=0>
+         <input type="number" name="y0" id="i2" min=0>
+         <input type="number" name="x1" id="i3" min=0>
+         <input type="number" name="y1" id="i4" min=0>
+         <button type="submit" id='btnCreateShape' >Narysuj</button>
+         
+         
+       </form>
+       <div>
+         <form name='resizeForm'>
+           x0<input type="number" name="x0Size" id='r1'min=0/>
+           y0<input type="number" name="y0Size" id='r2'min=0/>
+           x1<input type="number" name="x1Size" id='r3'min=0/>
+           y1<input type="number" name="y1Size" id='r4'min=0/>
+           r:<input type="number" name="radiusSize" id='r5'min=0/>
+           <button type="submit" id='btnResize' >Resize values</button>
+         </form>
+         <button id=10 onclick="inputResize();">Select To Resize</button>
+       </div>
+       <br>
+       <div>
+        <button id=9 onclick="mouseResize();">Resize</button>
+        Pobierz:<button id=11 onclick="download();">Download</button>
+        <span>
+          Wczytaj:
+          <input type="file" id="file" name="files"/>
+        </span>
+      </div>
+    </div>
+
+   </div>
+ </body>
+
+ <script type="application/javascript" src="shapes.js">
+ </script>
+</html>
+<!-- //http://jsfiddle.net/tgowz8j2/5/ -->
